@@ -1,7 +1,5 @@
 function bookShelf(books, width) {
-    if (books.some((e) => e[1] > width)) {
-        return "not posssible";
-    }
+
     if (books.length === 0) {
         return 0;
     }
@@ -9,7 +7,7 @@ function bookShelf(books, width) {
     let bookRow = [];
     let height = 0;
     for (let i = 0; i < books.length; i++) {
-        sum = sum + books[i][1];
+        sum = sum + books[i][0];
         bookRow.push(books[i]);
         if (sum > width) {
             bookRow.pop();
@@ -81,7 +79,7 @@ console.log(
     )
 );
 console.log(bookShelf([], 4));
-
+console.log(bookShelf([[2,2], [2,5]], 4));
 // Filling Book Shelf
 
 //
